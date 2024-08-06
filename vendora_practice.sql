@@ -16,6 +16,20 @@ Apple Airpods Headphones with 2656 sales
 
 --Return the top marketing channel, ranked by which channel brings in the most expensive orders. 
 
+with top_marketing_channels as (
+select customers.marketing_channel,
+  avg(orders.usd_price) as aov
+from `vendora-431118.vendora.customers` customers
+join `vendora-431118.vendora.orders` orders
+  on orders.customer_id = customers.id
+group by 1
+order by 2 desc)
+
+select *,
+  row_number() over (order by aov desc) as ranking
+from top_marketing_channels
+order by 2 desc
+
 --For each region, what’s the total number of orders and the total number of customers?
 
 --Advanced: What’s the average time it takes for a customer to place their first order for customers in NA or APAC?
