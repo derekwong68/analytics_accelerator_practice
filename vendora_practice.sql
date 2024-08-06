@@ -12,7 +12,7 @@ group by 1
 order by 2 desc
 limit 1;
 
-==Apple Airpods Headphones with 2656 sales
+--Apple Airpods Headphones with 2656 sales
 
 --Return the top marketing channel, ranked by which channel brings in the most expensive orders. 
 
