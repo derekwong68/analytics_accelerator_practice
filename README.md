@@ -1,1 +1,2 @@
-# analytics_accelerator
+# Practice
+SQL Practice
